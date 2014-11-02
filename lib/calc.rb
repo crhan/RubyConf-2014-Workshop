@@ -1,6 +1,6 @@
 module Calc
   def self.eval(string)
-    case string
+    result = case string
     when /-/
       string.split('-').map(&:to_i).reduce(&:-)
     when /\+/
@@ -12,5 +12,6 @@ module Calc
     else
       string.to_i
     end
+    [result, 0].max
   end
 end
