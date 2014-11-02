@@ -38,4 +38,9 @@ describe 'calc' do
   it 'should eval ("4/2") to 1' do
     expect(Calc.eval('4/2')).to eq(2)
   end
+
+  it 'should never get negative value' do
+    expect(Calc.eval('3- 5')).to eq(0)
+    expect(Calc.eval('4 -10')).to eq(0)
+  end
 end
